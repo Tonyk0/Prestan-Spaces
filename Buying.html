@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Properties For Sale — Prestan Spaces</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#D4A843;--gold2:#F2CC74;--gold3:#A07828;--ink:#0C0B09;--ink2:#1C1A16;--ink3:#2E2B24;--sand:#F7F2E8;--sand2:#EDE6D6;--sand3:#DDD4C0;--stone:#8C8070;--stone2:#B8AD9E;--white:#FFFFFF;--success:#1A5C3A;--success-bg:#E8F5EE;--danger:#8C2A2A}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--sand);color:var(--ink);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--sand2)}::-webkit-scrollbar-thumb{background:var(--gold3);border-radius:3px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 48px;height:130px;display:flex;align-items:center;justify-content:space-between;background:rgba(12,11,9,0.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(212,168,67,0.15)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+
+
+.nav-center{display:flex;align-items:center;gap:28px}
+.nav-center a{font-size:12px;font-weight:400;color:rgba(255,255,255,0.6);text-decoration:none;letter-spacing:1.2px;text-transform:uppercase;transition:color 0.25s}
+.nav-center a:hover,.nav-center a.active{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.75);padding:7px 18px;border-radius:6px;font-family:'Jost',sans-serif;font-size:12px;cursor:pointer;transition:all 0.25s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:var(--ink);padding:8px 20px;border-radius:6px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;cursor:pointer;border:none;transition:all 0.25s}
+.btn-gold:hover{background:var(--gold2)}
+
+/* PHONE STRIP */
+/* phone-strip moved to top */
+.phone-strip span{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase}
+.phone-strip a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:500;display:flex;align-items:center;gap:5px;letter-spacing:0.3px}
+.phone-strip a:hover{color:var(--gold2)}
+
+/* PAGE HERO */
+.page-hero{margin-top:130px;height:340px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.page-hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80');background-size:cover;background-position:center;filter:brightness(0.4)}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,11,9,0.95) 0%,transparent 60%)}
+.page-hero-content{position:relative;z-index:2;padding:0 56px 48px;max-width:1200px;margin:0 auto;width:100%}
+.page-breadcrumb{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.page-breadcrumb a{color:var(--gold);text-decoration:none}
+.page-hero h1{font-family:'Libre Baskerville',serif;font-size:clamp(36px,5vw,60px);font-weight:700;color:var(--white);line-height:1.1}
+.page-hero h1 em{color:var(--gold);font-style:italic}
+.page-hero-sub{font-size:15px;color:rgba(255,255,255,0.55);margin-top:12px;font-weight:300}
+
+/* MAIN */
+.main{max-width:1200px;margin:0 auto;padding:48px 56px 100px}
+
+/* SEARCH + FILTER */
+.search-filter-bar{background:var(--white);border:1px solid var(--sand3);border-radius:16px;padding:24px 28px;margin-bottom:36px;box-shadow:0 4px 24px rgba(12,11,9,0.06)}
+.sfb-row1{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.search-input-wrap{flex:1;position:relative}
+.search-input-wrap::before{content:'🔍';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:15px;opacity:0.5}
+.sfb-input{width:100%;padding:11px 14px 11px 42px;border:1.5px solid var(--sand3);border-radius:10px;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--sand);outline:none;transition:border-color 0.2s}
+.sfb-input:focus{border-color:var(--gold);background:var(--white)}
+.sfb-select{padding:11px 16px;border:1.5px solid var(--sand3);border-radius:10px;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink);background:var(--sand);outline:none;cursor:pointer;transition:border-color 0.2s;min-width:140px}
+.sfb-select:focus{border-color:var(--gold)}
+.btn-search{background:var(--gold);color:var(--ink);border:none;padding:11px 24px;border-radius:10px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.btn-search:hover{background:var(--gold2)}
+.sfb-row2{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.sfb-label{font-size:11px;font-weight:600;color:var(--stone);letter-spacing:1px;text-transform:uppercase;margin-right:4px}
+.chip{padding:7px 16px;border-radius:20px;border:1.5px solid var(--sand3);background:transparent;font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);cursor:pointer;transition:all 0.2s;font-weight:400}
+.chip.on{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:500}
+.chip:hover:not(.on){border-color:var(--gold);color:var(--gold3)}
+.sfb-sep{width:1px;height:24px;background:var(--sand3);margin:0 4px}
+.price-range{display:flex;align-items:center;gap:6px}
+.pr-input{padding:7px 10px;border:1.5px solid var(--sand3);border-radius:8px;font-family:'Jost',sans-serif;font-size:12px;color:var(--ink);background:var(--sand);outline:none;width:110px}
+.pr-input:focus{border-color:var(--gold)}
+.pr-dash{font-size:12px;color:var(--stone2)}
+
+/* RESULTS META */
+.results-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.results-count{font-size:14px;color:var(--stone);font-weight:300}<br>.results-count strong{color:var(--ink);font-weight:600}
+.sort-wrap{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--stone)}
+.sort-wrap select{padding:7px 12px;border:1.5px solid var(--sand3);border-radius:8px;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink);background:var(--white);outline:none;cursor:pointer}
+.sort-wrap select:focus{border-color:var(--gold)}
+
+/* GRID */
+.prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+
+/* CARD */
+.prop-card{background:var(--white);border-radius:20px;overflow:hidden;border:1px solid var(--sand3);transition:all 0.4s cubic-bezier(0.16,1,0.3,1);position:relative}
+.prop-card:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(12,11,9,0.12);border-color:var(--sand3)}
+.card-img{position:relative;height:224px;overflow:hidden;background:var(--sand2);display:flex;align-items:center;justify-content:center}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;display:block}
+.prop-card:hover .card-img img{transform:scale(1.07)}
+.card-no-img{font-size:52px;opacity:0.2}
+.card-img-nav{position:absolute;bottom:12px;right:12px;display:flex;gap:6px}
+.card-img-nav button{width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,0.92);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;font-weight:600}
+.card-img-nav button:hover{background:var(--white)}
+.card-img-count{position:absolute;bottom:12px;left:12px;background:rgba(12,11,9,0.7);color:var(--white);font-size:11px;padding:4px 10px;border-radius:16px;font-weight:400}
+.card-badge{position:absolute;top:14px;left:14px;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;letter-spacing:0.5px;text-transform:uppercase}
+.b-avail{background:var(--success-bg);color:var(--success)}
+.b-booked{background:rgba(12,11,9,0.75);color:var(--white)}
+.card-actions{position:absolute;top:14px;right:14px;display:flex;gap:8px}
+.btn-like{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,0.92);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all 0.2s}
+.btn-like:hover{background:var(--white);transform:scale(1.1)}
+.btn-del{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,0.92);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--danger);transition:all 0.2s}
+.btn-del:hover{background:#fde8e8}
+.card-body{padding:20px 22px 22px}
+.card-tag{font-size:11px;color:var(--gold3);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px}
+.card-title{font-family:'Libre Baskerville',serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.3}
+.card-loc{font-size:13px;color:var(--stone2);margin-bottom:10px;display:flex;align-items:center;gap:5px}
+.card-desc{font-size:13px;color:var(--stone);line-height:1.65;margin-bottom:14px;font-weight:300;max-height:80px;overflow:hidden}
+.card-meta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.card-meta span{font-size:12px;color:var(--stone);background:var(--sand);padding:4px 10px;border-radius:8px}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--sand2)}
+.card-price{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--gold3)}
+.card-price em{font-size:12px;font-weight:400;color:var(--stone2);font-family:'Jost',sans-serif;font-style:normal}
+.card-likes{font-size:12px;color:var(--stone2);margin-top:3px}
+.btn-book{background:var(--ink);color:var(--white);border:none;padding:10px 20px;border-radius:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.25s;letter-spacing:0.3px}
+.btn-book:hover{background:var(--ink3);transform:translateY(-1px)}
+.btn-book:disabled{background:var(--sand3);color:var(--stone2);cursor:not-allowed;transform:none}
+
+/* EMPTY / LOADING */
+.empty{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--stone)}
+.empty .ei{font-size:56px;margin-bottom:16px;opacity:0.2}
+.empty p{font-size:16px;font-weight:300}
+.loading{grid-column:1/-1;text-align:center;padding:64px}
+.spinner{width:36px;height:36px;border:3px solid var(--sand3);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(12,11,9,0.85);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:24px}
+.modal-overlay.active{display:flex}
+.modal-box{background:var(--sand);border-radius:20px;width:100%;max-width:460px;padding:38px;position:relative;animation:mPop 0.32s cubic-bezier(0.34,1.56,0.64,1);max-height:90vh;overflow-y:auto}
+@keyframes mPop{from{opacity:0;transform:scale(0.88)}to{opacity:1;transform:scale(1)}}
+.modal-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--sand3);background:transparent;font-size:18px;cursor:pointer;color:var(--stone);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.modal-close:hover{background:var(--sand2)}
+.modal-title{font-family:'Libre Baskerville',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.modal-sub{font-size:13px;color:var(--stone);margin-bottom:24px;font-weight:300;line-height:1.6}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:11px;font-weight:600;color:var(--stone);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:11px 14px;border:1.5px solid var(--sand3);border-radius:10px;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--white);transition:border-color 0.2s;outline:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-modal{width:100%;background:var(--gold);color:var(--ink);border:none;padding:13px;border-radius:10px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.25s;margin-top:8px}
+.btn-modal:hover{background:var(--gold2)}
+.terms-box{background:var(--white);border:1px solid var(--sand3);border-radius:10px;padding:14px;margin-bottom:14px;font-size:12px;color:var(--stone);line-height:1.7;max-height:120px;overflow-y:auto;font-weight:300}
+.terms-check{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:13px;color:var(--ink)}
+.terms-check input[type=checkbox]{margin-top:3px;accent-color:var(--gold);width:15px;height:15px;flex-shrink:0}
+.fee-box{background:linear-gradient(135deg,rgba(212,168,67,0.12),rgba(212,168,67,0.05));border:1px solid rgba(212,168,67,0.3);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.fee-box p{font-size:13px;color:var(--ink);line-height:1.65}
+.fee-box strong{color:var(--gold3)}
+.book-summary{background:var(--white);border:1px solid var(--sand3);border-radius:10px;padding:14px;margin-bottom:16px}
+.book-summary p{font-size:12px;color:var(--stone);margin-bottom:3px;font-weight:300}
+.book-summary strong{font-size:15px;color:var(--ink);display:block}
+.user-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:5px 14px 5px 6px;cursor:pointer}
+.user-av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold3),var(--gold));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--white)}
+.user-badge span{font-size:13px;color:var(--white)}
+.toast{position:fixed;bottom:56px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--ink3);color:var(--white);padding:12px 26px;border-radius:10px;font-size:14px;z-index:9999;transition:transform 0.35s;white-space:nowrap;border:1px solid rgba(212,168,67,0.25);pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.err{background:var(--danger)}
+.auth-tabs{display:flex;margin-bottom:24px;border-bottom:2px solid var(--sand3)}
+.auth-tab{flex:1;padding:11px;background:transparent;border:none;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;color:var(--stone);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s}
+.auth-tab.active{color:var(--gold3);border-bottom-color:var(--gold)}
+@media(max-width:900px){.nav{padding:0 20px}.nav-center{display:none}.main{padding:32px 20px 80px}.page-hero-content{padding:0 20px 36px}}
+@media(max-width:600px){.sfb-row1{flex-wrap:wrap}}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px}
+.lightbox.open{display:flex}
+.lightbox-img{max-width:92vw;max-height:82vh;object-fit:contain;border-radius:8px;user-select:none;transition:transform 0.3s ease;cursor:zoom-in}
+.lightbox-img.zoomed{transform:scale(2);cursor:zoom-out}
+.lightbox-close{position:absolute;top:20px;right:24px;background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.lightbox-close:hover{background:rgba(255,255,255,0.15);border-color:#fff}
+.lightbox-nav{display:flex;align-items:center;gap:20px}
+.lightbox-btn{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.lightbox-btn:hover{background:rgba(255,255,255,0.25)}
+.lightbox-counter{color:rgba(255,255,255,0.6);font-size:14px;min-width:60px;text-align:center}
+.lightbox-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:1px;white-space:nowrap}
+
+/* BOOKED STATE */
+.card-booked-banner{position:absolute;top:0;left:0;right:0;background:rgba(12,11,9,0.82);color:#fff;text-align:center;padding:7px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;z-index:2;backdrop-filter:blur(4px)}
+.prop-card.is-booked .card-img img{filter:brightness(0.6)}
+
+/* ── BOOKING CONFIRMATION POPUP ── */
+.confirm-overlay{position:fixed;inset:0;z-index:5000;background:rgba(12,11,9,0.88);backdrop-filter:blur(16px);display:none;align-items:center;justify-content:center;padding:20px}
+.confirm-overlay.open{display:flex}
+.confirm-box{
+  background:var(--white);border-radius:24px;width:100%;max-width:480px;
+  overflow:hidden;position:relative;
+  animation:confirmPop 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow:0 40px 80px rgba(12,11,9,0.4);
+}
+@keyframes confirmPop{
+  from{opacity:0;transform:scale(0.7) translateY(40px)}
+  to{opacity:1;transform:scale(1) translateY(0)}
+}
+/* Animated gold top bar */
+.confirm-top-bar{height:5px;background:linear-gradient(90deg,var(--gold3),var(--gold),var(--gold2),var(--gold));background-size:200% 100%;animation:shimmer 2s linear infinite}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+/* Header */
+.confirm-header{
+  background:linear-gradient(160deg,var(--ink) 0%,var(--ink3) 100%);
+  padding:40px 36px 32px;text-align:center;position:relative;overflow:hidden;
+}
+.confirm-header::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,168,67,0.18) 0%,transparent 70%);
+}
+.confirm-header::after{
+  content:'';position:absolute;bottom:-40px;left:-40px;
+  width:150px;height:150px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,168,67,0.1) 0%,transparent 70%);
+}
+/* Animated tick circle */
+.confirm-tick-wrap{position:relative;z-index:2;margin-bottom:20px}
+.confirm-tick-ring{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(212,168,67,0.2),rgba(212,168,67,0.05));
+  border:2px solid rgba(212,168,67,0.5);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto;position:relative;
+  animation:ringPulse 2s ease infinite;
+}
+@keyframes ringPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(212,168,67,0.3)}
+  50%{box-shadow:0 0 0 16px rgba(212,168,67,0)}
+}
+.confirm-tick-ring::before{
+  content:'';position:absolute;inset:-6px;border-radius:50%;
+  border:1px solid rgba(212,168,67,0.2);animation:ringPulse 2s 0.5s ease infinite;
+}
+.confirm-tick-icon{font-size:32px;animation:tickBounce 0.6s 0.3s cubic-bezier(0.34,1.56,0.64,1) both}
+@keyframes tickBounce{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+.confirm-header h2{
+  font-family:'Libre Baskerville',serif;font-size:26px;font-weight:700;
+  color:var(--white);margin-bottom:8px;position:relative;z-index:2;
+  animation:fadeUp 0.6s 0.4s both;
+}
+.confirm-header p{
+  font-size:14px;color:rgba(255,255,255,0.55);font-weight:300;
+  line-height:1.6;position:relative;z-index:2;max-width:320px;margin:0 auto;
+  animation:fadeUp 0.6s 0.5s both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* Body */
+.confirm-body{padding:28px 32px 32px;background:var(--sand)}
+.confirm-ref{
+  background:linear-gradient(135deg,rgba(212,168,67,0.12),rgba(212,168,67,0.04));
+  border:1px solid rgba(212,168,67,0.3);border-radius:12px;
+  padding:14px 18px;margin-bottom:20px;
+  display:flex;align-items:center;justify-content:space-between;
+  animation:fadeUp 0.6s 0.6s both;
+}
+.confirm-ref-label{font-size:11px;font-weight:600;color:var(--stone);text-transform:uppercase;letter-spacing:1px}
+.confirm-ref-num{font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;color:var(--gold3);letter-spacing:1px}
+.confirm-details{
+  background:var(--white);border-radius:12px;border:1px solid var(--sand3);
+  overflow:hidden;margin-bottom:18px;
+  animation:fadeUp 0.6s 0.7s both;
+}
+.confirm-detail-row{
+  display:flex;align-items:center;gap:14px;padding:13px 18px;
+  border-bottom:1px solid var(--sand2);
+}
+.confirm-detail-row:last-child{border-bottom:none}
+.confirm-detail-icon{font-size:16px;width:22px;text-align:center;flex-shrink:0}
+.confirm-detail-label{font-size:11px;font-weight:600;color:var(--stone2);text-transform:uppercase;letter-spacing:0.5px;min-width:72px}
+.confirm-detail-value{font-size:13px;color:var(--ink);font-weight:500;flex:1;text-align:right}
+.confirm-fee-note{
+  background:var(--white);border:1px solid var(--sand3);border-radius:12px;
+  padding:14px 16px;margin-bottom:20px;
+  display:flex;gap:12px;align-items:flex-start;
+  animation:fadeUp 0.6s 0.8s both;
+}
+.confirm-fee-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.confirm-fee-text p{font-size:13px;color:var(--stone);line-height:1.6;font-weight:300}
+.confirm-fee-text strong{color:var(--ink);font-weight:600}
+.confirm-cta{animation:fadeUp 0.6s 0.9s both}
+.btn-confirm-ok{
+  width:100%;background:linear-gradient(135deg,var(--ink),var(--ink3));
+  color:var(--white);border:none;padding:15px;border-radius:12px;
+  font-family:'Jost',sans-serif;font-size:15px;font-weight:600;
+  cursor:pointer;transition:all 0.3s;letter-spacing:0.5px;
+  position:relative;overflow:hidden;
+}
+.btn-confirm-ok::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold3),var(--gold));
+  opacity:0;transition:opacity 0.3s;
+}
+.btn-confirm-ok:hover::after{opacity:1}
+.btn-confirm-ok span{position:relative;z-index:1}
+.btn-confirm-ok:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(12,11,9,0.3)}
+.confirm-support{text-align:center;margin-top:14px;font-size:12px;color:var(--stone);animation:fadeUp 0.6s 1s both}
+.confirm-support a{color:var(--gold3);text-decoration:none;font-weight:500}
+.confirm-support a:hover{text-decoration:underline}
+/* Confetti particles */
+.confetti-wrap{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.confetti-dot{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall linear forwards}
+@keyframes confettiFall{
+  0%{transform:translateY(-20px) rotate(0deg);opacity:1}
+  100%{transform:translateY(120px) rotate(360deg);opacity:0}
+}
+.phone-strip{
+  width:100%;background:#0C0B09;
+  border-bottom:1px solid rgba(212,168,67,0.2);
+  padding:9px 48px;
+  display:flex;align-items:center;justify-content:center;
+  gap:36px;flex-wrap:wrap;
+}
+.phone-strip span{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase}
+.phone-strip a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:500;
+  display:flex;align-items:center;gap:5px;transition:color 0.2s;letter-spacing:0.3px}
+.phone-strip a:hover{color:var(--gold2)}
+
+
+
+
+/* PRESTAN SPACES LOGO */
+.nav-logo-img{width:120px;height:120px;object-fit:contain;border-radius:12px;background:#fff;padding:5px;flex-shrink:0;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.nav-logo-text{display:flex;flex-direction:column;gap:3px}
+.nav-brand{font-family:'Libre Baskerville',serif;font-size:30px;font-weight:700;color:var(--white);letter-spacing:0.3px;line-height:1.1}
+.nav-brand span{color:var(--gold)}
+.nav-tagline{font-size:14px;font-weight:500;color:rgba(255,255,255,0.5);letter-spacing:2.5px;text-transform:uppercase;line-height:1}
+
+</style>
+</head>
+<body>
+<!-- PHONE STRIP -->
+<div class="phone-strip">
+  <span>Need help?</span>
+  <a href="tel:0746220862">📞 0746220862</a>
+  <a href="tel:0702659854">📞 0702659854</a>
+  <a href="mailto:hello@prestanspaces.co.ke">✉️ hello@prestanspaces.co.ke</a>
+</div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.jpg" alt="Prestan Spaces" class="nav-logo-img"/>
+    <div class="nav-logo-text">
+      <span class="nav-brand">Prestan <span>Spaces</span></span>
+      <span class="nav-tagline">Rent · Visit · Own</span>
+    </div>
+  </a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="rentals.html">Rentals</a>
+    <a href="bnb.html">BnBs</a>
+    <a href="buying.html" class="active">Buy</a>
+  </div>
+  <div class="nav-right" id="navRight">
+    <button class="btn-ghost" onclick="openModal('authModal')">Sign In</button>
+    <button class="btn-gold" onclick="openModal('addModal');initDescPoints()">+ List Property</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-breadcrumb"><a href="index.html">Home</a> › Rentals</div>
+    <h1>Properties <em>For Sale</em></h1>
+    <p class="page-hero-sub">Freehold and leasehold properties for sale across Nairobi and Kiambu County.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="search-filter-bar">
+    <div class="sfb-row1">
+      <div class="search-input-wrap"><input class="sfb-input" id="searchQ" placeholder="Search by name or location..." oninput="applyFilters()"/></div>
+      <select class="sfb-select" id="locSel" onchange="applyFilters()">
+        <option value="">All Locations</option>
+        <option>Westlands</option>
+        <option>Karen</option>
+        <option>Kilimani</option>
+        <option>Lavington</option>
+        <option>Runda</option>
+        <option>Parklands</option>
+        <option>Eastleigh</option>
+        <option>South B</option>
+        <option>South C</option>
+        <option>Langata</option>
+        <option>Hurlingham</option>
+        <option>Upper Hill</option>
+        <option>CBD</option>
+        <option>Ngong Road</option>
+        <option>Kileleshwa</option>
+        <option>Ridgeways</option>
+        <option>Kiambu Town</option>
+        <option>Thika</option>
+        <option>Ruiru</option>
+        <option>Juja</option>
+        <option>Limuru</option>
+        <option>Kikuyu</option>
+        <option>Karuri</option>
+        <option>Githunguri</option>
+        <option>Kiambaa</option>
+        <option>Tigoni</option>
+      </select>
+      <button class="btn-search" onclick="applyFilters()">Search</button>
+    </div>
+    <div class="sfb-row2">
+      <span class="sfb-label">Bedrooms:</span>
+      <button class="chip on" onclick="setBedFilter('',this)">All</button>
+      <button class="chip" onclick="setBedFilter('studio',this)">Studio</button>
+      <button class="chip" onclick="setBedFilter('1',this)">1 Bed</button>
+      <button class="chip" onclick="setBedFilter('2',this)">2 Beds</button>
+      <button class="chip" onclick="setBedFilter('3',this)">3 Beds</button>
+      <button class="chip" onclick="setBedFilter('4+',this)">4+ Beds</button>
+      <div class="sfb-sep"></div>
+      <span class="sfb-label">Price KSh:</span>
+      <div class="price-range">
+        <input class="pr-input" id="minP" type="number" placeholder="Min" oninput="applyFilters()"/>
+        <span class="pr-dash">—</span>
+        <input class="pr-input" id="maxP" type="number" placeholder="Max" oninput="applyFilters()"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-meta">
+    <p class="results-count"><strong id="resCount">0</strong> properties found</p>
+    <div class="sort-wrap">Sort by:
+      <select id="sortSel" onchange="applyFilters()">
+        <option value="new">Newest First</option>
+        <option value="asc">Price: Low → High</option>
+        <option value="desc">Price: High → Low</option>
+        <option value="likes">Most Liked</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="prop-grid" id="grid">
+    <div class="loading"><div class="spinner"></div>Loading properties...</div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- AUTH -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('authModal')">&times;</button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="authSwitch('login',this)">Sign In</button>
+      <button class="auth-tab" onclick="authSwitch('signup',this)">Sign Up</button>
+    </div>
+    <div id="loginSec">
+      <h2 class="modal-title">Welcome Back</h2>
+      <p class="modal-sub">Sign in to book viewings.</p>
+      <div class="form-group"><label>Email</label><input type="email" id="liEmail" placeholder="your@email.com"/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="liPass" placeholder="••••••••"/></div>
+      <button class="btn-modal" onclick="doLogin()">Sign In</button>
+    </div>
+    <div id="signupSec" style="display:none">
+      <h2 class="modal-title">Join Prestan Spaces</h2>
+      <p class="modal-sub">Create your free account.</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="suFirst" placeholder="John"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="suLast" placeholder="Doe"/></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" id="suEmail" placeholder="your@email.com"/></div>
+      <div class="form-group"><label>Phone</label><input type="tel" id="suPhone" placeholder="0746220862"/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="suPass" placeholder="Create a password"/></div>
+      <button class="btn-modal" onclick="doSignup()">Create Account</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD LISTING -->
+<div class="modal-overlay" id="addModal">
+  <div class="modal-box" style="max-width:540px">
+    <button class="modal-close" onclick="closeModal('addModal')">&times;</button>
+    <h2 class="modal-title">List a Property For Sale</h2>
+    <p class="modal-sub">Your listing goes live immediately.</p>
+    <form id="addForm" autocomplete="off">
+      <div class="form-row">
+        <div class="form-group"><label>Title</label><input type="text" id="alTitle" placeholder="e.g. Modern 2BR Apartment" required/></div>
+        <div class="form-group"><label>Location</label><input type="text" id="alLoc" placeholder="e.g. Westlands" required/></div>
+      </div>
+      <div class="form-group">
+          <label>Description Points</label>
+          <div id="descPoints" style="display:flex;flex-direction:column;gap:8px;margin-bottom:8px"></div>
+          <button type="button" onclick="addDescPoint()" style="background:rgba(212,168,67,0.12);border:1.5px dashed rgba(212,168,67,0.4);color:var(--gold3);padding:9px;border-radius:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;cursor:pointer;width:100%;transition:all 0.2s" onmouseover="this.style.background='rgba(212,168,67,0.2)'" onmouseout="this.style.background='rgba(212,168,67,0.12)'">+ Add Description Point</button>
+          <input type="hidden" id="alDesc" name="alDesc"/>
+        </div>
+      <div class="form-row">
+        <div class="form-group"><label>Sale Price (KSh)</label><input type="number" id="alPrice" placeholder="35000" min="1" required/></div>
+        <div class="form-group"><label>Bedrooms</label>
+          <select id="alBeds"><option value="studio">Studio</option><option value="1">1 Bed</option><option value="2">2 Beds</option><option value="3">3 Beds</option><option value="4+">4+ Beds</option></select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Bathrooms</label><select id="alBaths"><option>1</option><option>2</option><option>3+</option></select></div>
+        <div class="form-group"><label>Contact Phone</label><input type="tel" id="alPhone" placeholder="0746220862" required/></div>
+      </div>
+      <div class="form-group"><label>Photos</label><input type="file" id="alPhotos" accept="image/*" multiple/></div>
+      <button type="submit" class="btn-modal" id="alBtn">Publish Sale Listing</button>
+    </form>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div class="modal-overlay" id="bookModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('bookModal')">&times;</button>
+    <h2 class="modal-title">Book a Viewing</h2>
+    <div class="book-summary" id="bookSum"></div>
+    <div class="fee-box">
+      <p>📋 <strong>Viewing Fee: KSh 1,500</strong><br>This fee is paid <strong>in person at the property</strong>. No online payment required — your security is our priority.</p>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Preferred Date</label><input type="date" id="viewDate" onchange="checkDateLive(this, false)"/></div>
+      <div class="form-group"><label>Preferred Time</label>
+        <select id="viewTime"><option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option></select>
+      </div>
+    </div>
+    <div class="form-group"><label>Your Full Name</label><input type="text" id="bkName" placeholder="Full name"/></div>
+    <div class="form-group"><label>Phone Number</label><input type="tel" id="bkPhone" placeholder="0746220862"/></div>
+    <div class="terms-box">
+      <strong>Terms & Conditions</strong><br><br>
+      1. <strong>Viewing Fee:</strong> A non-refundable KSh 1,500 fee is payable offline at the property on the day of viewing.<br><br>
+      2. <strong>Purchase Process:</strong> Prestan Spaces facilitates the connection between buyer and seller. All sale transactions are handled independently between both parties.<br><br>
+      3. <strong>Safety:</strong> Always visit during daylight hours. Inform a trusted person of your visit.<br><br>
+      4. <strong>Conduct:</strong> Treat the property with respect. Any damage is the visitor's responsibility.
+    </div>
+    <div class="terms-check">
+      <input type="checkbox" id="tcBox"/>
+      <label for="tcBox">I agree to the Terms & Conditions and understand the <strong>KSh 1,500</strong> offline viewing fee.</label>
+    </div>
+    <button class="btn-modal" onclick="confirmBook()">Confirm Viewing Appointment</button>
+  </div>
+</div>
+
+<script>
+const API = 'http://localhost:3000/api';
+let currentUser = JSON.parse(localStorage.getItem('psUser')||'null');
+let allProps = [];
+let currentBookProp = null;
+let bedFilter = '';
+let imgIdx = {};
+let likes = JSON.parse(localStorage.getItem('psLikes')||'{}');
+
+// INIT
+window.addEventListener('DOMContentLoaded',()=>{ updateNav(); setMinDate(); loadProps(); });
+
+function setMinDate(){
+  const t = new Date().toISOString().split('T')[0];
+  ['viewDate','ciDate','coDate','checkoutDate'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.min = t;
+  });
+}
+
+// TOAST
+function toast(msg,type=''){
+  const t=document.getElementById('toast'); t.textContent=msg;
+  t.className='toast show'+(type==='error'?' err':'');
+  setTimeout(()=>t.className='toast',3500);
+}
+
+// MODALS
+function openModal(id){ document.getElementById(id).classList.add('active'); document.body.style.overflow='hidden'; }
+function closeModal(id){ document.getElementById(id).classList.remove('active'); document.body.style.overflow=''; }
+window.addEventListener('click',e=>{ document.querySelectorAll('.modal-overlay.active').forEach(m=>{ if(e.target===m){m.classList.remove('active');document.body.style.overflow='';} }); });
+
+// AUTH
+function authSwitch(tab,btn){
+  document.querySelectorAll('.auth-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+  document.getElementById('loginSec').style.display=tab==='login'?'block':'none';
+  document.getElementById('signupSec').style.display=tab==='signup'?'block':'none';
+}
+function doLogin(){
+  const e=document.getElementById('liEmail').value.trim();
+  const p=document.getElementById('liPass').value;
+  if(!e||!p) return toast('Fill in all fields','error');
+  const u=JSON.parse(localStorage.getItem('psUsers')||'[]').find(u=>u.email===e&&u.password===p);
+  if(!u) return toast('Invalid credentials','error');
+  currentUser=u; localStorage.setItem('psUser',JSON.stringify(u));
+  updateNav(); closeModal('authModal'); toast('Welcome back, '+u.firstName+'!');
+}
+function doSignup(){
+  const first=document.getElementById('suFirst').value.trim();
+  const last=document.getElementById('suLast').value.trim();
+  const email=document.getElementById('suEmail').value.trim();
+  const phone=document.getElementById('suPhone').value.trim();
+  const pass=document.getElementById('suPass').value;
+  if(!first||!last||!email||!pass) return toast('Fill in all fields','error');
+  const users=JSON.parse(localStorage.getItem('psUsers')||'[]');
+  if(users.find(u=>u.email===email)) return toast('Email already registered','error');
+  const u={firstName:first,lastName:last,email,phone,password:pass,role:'tenant',id:Date.now().toString()};
+  users.push(u); localStorage.setItem('psUsers',JSON.stringify(users));
+  currentUser=u; localStorage.setItem('psUser',JSON.stringify(u));
+  updateNav(); closeModal('authModal'); toast('Welcome, '+first+'! 🎉');
+}
+function updateNav(){
+  const nav=document.getElementById('navRight');
+  if(currentUser){
+    nav.innerHTML=`<div class="user-badge" onclick="doLogout()"><div class="user-av">${currentUser.firstName[0]}${currentUser.lastName[0]}</div><span>${currentUser.firstName}</span></div><button class="btn-gold" onclick="openModal('addModal');initDescPoints()">+ List</button>`;
+  } else {
+    nav.innerHTML=`<button class="btn-ghost" onclick="openModal('authModal')">Sign In</button><button class="btn-gold" onclick="openModal('addModal');initDescPoints()">+ List Property</button>`;
+  }
+}
+function doLogout(){ if(!confirm('Sign out?'))return; currentUser=null; localStorage.removeItem('psUser'); updateNav(); toast('Signed out'); }
+
+// LOAD
+async function loadProps(){
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '<div class="loading"><div class="spinner"></div>Loading properties...</div>';
+  try {
+    const res = await fetch(API + '/houses');
+    if (!res.ok) throw new Error('Server returned ' + res.status);
+    const d   = await res.json();
+    const all = d.houses || [];
+
+    // Normalise: match any casing / spacing variation of "sale"
+    allProps = all.filter(h => {
+      const t = (h.type || '').trim().toLowerCase();
+      return t === 'sale' || t === 'for sale' || t === 'buying' || t === 'purchase';
+    });
+
+    document.getElementById('resCount').textContent = allProps.length;
+    applyFilters();
+  } catch(err) {
+    grid.innerHTML = '<div class="empty"><div class="ei">⚠️</div><p>Cannot connect to server.<br>Make sure <strong>node server.js</strong> is running in your terminal.<br><small style="color:var(--stone2)">' + err.message + '</small></p></div>';
+    document.getElementById('resCount').textContent = '0';
+  }
+}
+
+// FILTER
+function setBedFilter(val,btn){
+  bedFilter=val;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+  btn.classList.add('on');
+  applyFilters();
+}
+function applyFilters(){
+  const q=(document.getElementById('searchQ').value||'').toLowerCase();
+  const loc=(document.getElementById('locSel').value||'').toLowerCase();
+  const mn=parseFloat(document.getElementById('minP').value)||0;
+  const mx=parseFloat(document.getElementById('maxP').value)||Infinity;
+  const sort=document.getElementById('sortSel').value;
+  let res=allProps.filter(p=>{
+    const mq=!q||p.title.toLowerCase().includes(q)||p.location.toLowerCase().includes(q);
+    const ml=!loc||p.location.toLowerCase().includes(loc);
+    const mp=p.price>=mn&&p.price<=mx;
+    const mb=!bedFilter||p.bedrooms===bedFilter;
+    return mq&&ml&&mp&&mb;
+  });
+  if(sort==='asc') res.sort((a,b)=>a.price-b.price);
+  else if(sort==='desc') res.sort((a,b)=>b.price-a.price);
+  else if(sort==='likes') res.sort((a,b)=>(b.likes||0)-(a.likes||0));
+  document.getElementById('resCount').textContent=res.length;
+  renderGrid(res);
+}
+
+// RENDER
+function renderGrid(props){
+  const grid=document.getElementById('grid');
+  grid.innerHTML='';
+  if(!props.length){
+    grid.innerHTML='<div class="empty"><div class="ei">🏡</div><p>No properties found. Try adjusting your filters.</p></div>';
+    return;
+  }
+  props.forEach(h=>{
+    const photos=h.photos||[];
+    const idx=imgIdx[h.id]||0;
+    const src=photos.length>0?`http://localhost:3000${photos[idx]}`:null;
+    const liked=likes[h.id]||false;
+    const lc=h.likes||0;
+    const c=document.createElement('div');
+    c.className='prop-card'+(h.booked?' is-booked':'');
+    c.innerHTML=`
+      <div class="card-img">
+        ${src?`<img src="${src}" alt="${h.title}" id="pi_${h.id}" style="cursor:zoom-in" onclick="openLightbox(${JSON.stringify(h.photos||[])},${imgIdx[h.id]||0})" />`:'<div class="card-no-img">🏠</div>'}
+        ${h.booked?'<div class="card-booked-banner">🔒 Unit Booked</div>':''}
+        <div class="card-badge ${h.booked?'b-booked':'b-avail'}">${h.booked?'Booked':'Available'}</div>
+        <div class="card-actions">
+          <button class="btn-like" onclick="toggleLike('${h.id}',this)">${liked?'❤️':'🤍'}</button>
+          <button class="btn-del" onclick="deleteProp('${h.id}')">✕</button>
+        </div>
+        ${photos.length>1?`<div class="card-img-count" id="pc_${h.id}">${idx+1}/${photos.length}</div><div class="card-img-nav"><button onclick="chImg('${h.id}',-1)">‹</button><button onclick="chImg('${h.id}',1)">›</button></div>`:''}
+      </div>
+      <div class="card-body">
+        <div class="card-tag">For Sale</div>
+        <div class="card-title">${h.title}</div>
+        <div class="card-loc">📍 ${h.location}</div>
+        <div class="card-desc">
+          ${(h.description||'').split('\n').filter(Boolean).map(p=>`
+            <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:3px">
+              <span style="color:var(--gold);font-size:13px;flex-shrink:0;margin-top:1px">•</span>
+              <span>${p}</span>
+            </div>`).join('')}
+          </div>
+        <div class="card-meta">
+          ${h.bedrooms?`<span>🛏 ${h.bedrooms}</span>`:''}
+          ${h.bathrooms?`<span>🚿 ${h.bathrooms} Bath</span>`:''}
+          <span>📞 Contact Agent: 0746220862</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">KSh ${Number(h.price).toLocaleString()} <em></em></div>
+            <div class="card-likes" id="pl_${h.id}">❤️ ${lc} ${lc===1?'like':'likes'}</div>
+          </div>
+          <button class="btn-book"  onclick="openBook('${h.id}')">Book Viewing</button>
+        </div>
+      </div>`;
+    grid.appendChild(c);
+  });
+}
+
+// IMG NAV
+function chImg(id,dir){
+  const h=allProps.find(p=>p.id===id);
+  if(!h||!h.photos||h.photos.length<2) return;
+  imgIdx[id]=((imgIdx[id]||0)+dir+h.photos.length)%h.photos.length;
+  const i=imgIdx[id];
+  const img=document.getElementById('pi_'+id);
+  const cnt=document.getElementById('pc_'+id);
+  if(img) img.src=`http://localhost:3000${h.photos[i]}`;
+  if(cnt) cnt.textContent=(i+1)+'/'+h.photos.length;
+}
+
+// LIKE
+async function toggleLike(id,btn){
+  const l=likes[id]||false;
+  likes[id]=!l;
+  localStorage.setItem('psLikes',JSON.stringify(likes));
+  btn.innerHTML=likes[id]?'❤️':'🤍';
+  try{
+    const res=await fetch(`${API}/houses/${id}/like`,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({increment:likes[id]?1:-1})});
+    const d=await res.json();
+    if(d.success){ const el=document.getElementById('pl_'+id); const lc=d.house.likes||0; if(el) el.textContent=`❤️ ${lc} ${lc===1?'like':'likes'}`; const h=allProps.find(p=>p.id===id); if(h) h.likes=d.house.likes; }
+  }catch{}
+}
+
+// BOOKING
+function openBook(id){
+  if(!currentUser){ openModal('authModal'); toast('Sign in to book a viewing'); return; }
+  const h=allProps.find(p=>p.id===id);
+  if(!h) return;
+  currentBookProp=h;
+  document.getElementById('bookSum').innerHTML=`<p>Property</p><strong>${h.title} — ${h.location}</strong><p style="margin-top:5px">KSh ${Number(h.price).toLocaleString()} nth</p>`;
+  document.getElementById('tcBox').checked=false;
+  document.getElementById('bkName').value=currentUser.firstName+' '+currentUser.lastName;
+  document.getElementById('bkPhone').value=currentUser.phone||'';
+  openModal('bookModal');
+}
+async function confirmBook(){
+  // 1. Terms check
+  if(!document.getElementById('tcBox').checked) return toast('Accept the Terms & Conditions','error');
+  // 2. Name and phone
+  const name  = document.getElementById('bkName').value.trim();
+  const phone = document.getElementById('bkPhone').value.trim();
+  if(!name || !phone) return toast('Fill in your name and phone','error');
+  // 3. Date and time
+  const date = document.getElementById('viewDate').value;
+  const time = document.getElementById('viewTime') ? document.getElementById('viewTime').value : '';
+  if(!date) return toast('Please select a viewing date','error');
+  // 4. Date validation
+  const today = new Date(); today.setHours(0,0,0,0);
+  const appt  = new Date(date); appt.setHours(0,0,0,0);
+  if(appt < today) return toast('The selected date has already passed. Please choose today or a future date.','error');
+  // 5. Submit
+  const h = currentBookProp;
+  if(!h) return toast('No property selected','error');
+  try{
+    const res = await fetch(API+'/houses/'+h.id+'/book',{
+      method:'PATCH',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({cardName:name, phone:phone, date:date, time:time, isBnb:false})
+    });
+    const d = await res.json();
+    if(d.success){
+      closeModal('bookModal');
+      showConfirmPopup({title:h.title, location:h.location, date:date, time:time, name:name, phone:phone, isBnb:false});
+      loadProps();
+    } else {
+      toast(d.message || 'Booking failed. Please try again.','error');
+    }
+  } catch(err){
+    toast('Cannot connect to server. Make sure node server.js is running.','error');
+  }
+}
+
+// DELETE
+async function deleteProp(id){
+  if(!confirm('Delete this listing?'))return;
+  try{
+    const res=await fetch(`${API}/houses/${id}`,{method:'DELETE'});
+    const d=await res.json();
+    if(d.success){ toast('Listing deleted'); loadProps(); }
+    else toast(d.message||'Failed','error');
+  }catch{ toast('Cannot connect to server','error'); }
+}
+
+// ADD LISTING
+document.getElementById('addForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!currentUser){ closeModal('addModal'); openModal('authModal'); toast('Sign in first'); return; }
+  const btn=document.getElementById('alBtn');
+  btn.disabled=true; btn.textContent='Publishing...';
+
+  // Safely get description
+  let descVal = '';
+  try{ syncDesc(); descVal = (document.getElementById('alDesc')||{}).value||''; }catch(err){}
+  if(!descVal.trim()) descVal = 'Property available for sale.';
+
+  const fd=new FormData();
+  fd.append('title',       document.getElementById('alTitle').value.trim());
+  fd.append('location',    document.getElementById('alLoc').value.trim());
+  fd.append('description', descVal.trim());
+  fd.append('price',       document.getElementById('alPrice').value);
+  fd.append('type',        'sale');
+  fd.append('bedrooms',    document.getElementById('alBeds').value);
+  fd.append('bathrooms',   document.getElementById('alBaths').value);
+  fd.append('contact',     document.getElementById('alPhone').value.trim());
+  fd.append('postedBy',    currentUser.firstName+' '+currentUser.lastName);
+  Array.from(document.getElementById('alPhotos').files).forEach(f=>fd.append('photos',f));
+  try{
+    const res  = await fetch(API+'/houses',{method:'POST',body:fd});
+    const data = await res.json();
+    if(data.success){
+      document.getElementById('addForm').reset();
+      try{
+        const dp = document.getElementById('descPoints');
+        if(dp){ dp.innerHTML=''; addDescPoint(); }
+      }catch(err){}
+      closeModal('addModal');
+      toast('Property listed for sale successfully!');
+      loadProps();
+    } else {
+      toast(data.message||'Failed to list property','error');
+    }
+  } catch(err){
+    toast('Cannot connect to server. Is node server.js running?','error');
+  }
+  finally{ btn.disabled=false; btn.textContent='Publish Sale Listing'; }
+});
+
+// ── LIGHTBOX ──────────────────────────────────────────────────
+let lbPhotos = [];
+let lbIndex  = 0;
+
+function openLightbox(photos, startIndex) {
+  if (!photos || photos.length === 0) return;
+  lbPhotos = photos;
+  lbIndex  = startIndex || 0;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lightboxImg').classList.remove('zoomed');
+  document.body.style.overflow = '';
+}
+function updateLightbox() {
+  const img = document.getElementById('lightboxImg');
+  img.src   = 'http://localhost:3000' + lbPhotos[lbIndex];
+  img.classList.remove('zoomed');
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + lbPhotos.length;
+  document.querySelector('.lightbox-nav').style.display  = lbPhotos.length > 1 ? 'flex' : 'none';
+}
+function lightboxNav(dir) {
+  lbIndex = (lbIndex + dir + lbPhotos.length) % lbPhotos.length;
+  updateLightbox();
+}
+function toggleZoom(img) {
+  img.classList.toggle('zoomed');
+}
+function lightboxBgClick(e) {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+}
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape')     closeLightbox();
+  if (e.key === 'ArrowLeft')  lightboxNav(-1);
+  if (e.key === 'ArrowRight') lightboxNav(1);
+});
+
+// ── BULLET POINT DESCRIPTIONS ─────────────────────────────────
+function addDescPoint(value) {
+  const container = document.getElementById('descPoints');
+  const idx = container.children.length;
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'display:flex;align-items:center;gap:8px';
+  wrap.innerHTML = `
+    <span style="color:var(--gold);font-size:16px;flex-shrink:0">•</span>
+    <input type="text" placeholder="e.g. Spacious master bedroom with ensuite"
+      style="flex:1;padding:10px 12px;border:1.5px solid var(--sand3);border-radius:8px;font-family:Jost,sans-serif;font-size:14px;color:var(--ink);background:var(--white);outline:none;transition:border-color 0.2s"
+      onfocus="this.style.borderColor='var(--gold)'"
+      onblur="this.style.borderColor='var(--sand3)'"
+      value="${value || ''}"
+      oninput="syncDesc()"/>
+    <button type="button" onclick="removeDescPoint(this)"
+      style="width:30px;height:30px;border-radius:50%;border:1px solid var(--sand3);background:transparent;color:var(--stone);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s"
+      onmouseover="this.style.background='var(--red-bg)';this.style.color='var(--red)';this.style.borderColor='var(--red)'"
+      onmouseout="this.style.background='transparent';this.style.color='var(--stone)';this.style.borderColor='var(--sand3)'">×</button>
+  `;
+  container.appendChild(wrap);
+  syncDesc();
+}
+
+function removeDescPoint(btn) {
+  btn.closest('div').remove();
+  syncDesc();
+}
+
+function syncDesc() {
+  const inputs = document.querySelectorAll('#descPoints input[type=text]');
+  const points = Array.from(inputs).map(i => i.value.trim()).filter(Boolean);
+  document.getElementById('alDesc').value = points.join('\n');
+}
+
+// Add first point automatically when modal opens
+function initDescPoints() {
+  const container = document.getElementById('descPoints');
+  container.innerHTML = '';
+  addDescPoint();
+}
+
+
+// ── BOOKING CONFIRMATION POPUP ────────────────────────────────
+function showConfirmPopup(data) {
+  // Populate fields
+  document.getElementById('cfRef').textContent   = 'NA-' + Date.now().toString().slice(-6);
+  document.getElementById('cfProp').textContent  = data.title    || '—';
+  document.getElementById('cfLoc').textContent   = data.location || '—';
+  document.getElementById('cfDate').textContent  = data.date     || '—';
+  document.getElementById('cfName').textContent  = data.name     || '—';
+  document.getElementById('cfPhone').textContent = data.phone    || '—';
+
+  // Show/hide time row for BnB vs rental
+  if (data.time) {
+    document.getElementById('cfTime').textContent    = data.time;
+    document.getElementById('cfTimeRow').style.display = 'flex';
+  } else {
+    document.getElementById('cfTimeRow').style.display = 'none';
+  }
+
+  // Show/hide viewing fee note
+  document.getElementById('cfFeeNote').style.display = data.isBnb ? 'none' : 'flex';
+
+  // Fire confetti
+  spawnConfetti();
+
+  // Open overlay
+  document.getElementById('confirmOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeConfirm() {
+  document.getElementById('confirmOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close on background click
+document.getElementById('confirmOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeConfirm();
+});
+
+// Confetti
+function spawnConfetti() {
+  const wrap   = document.getElementById('confettiWrap');
+  wrap.innerHTML = '';
+  const colors = ['#D4A843','#F2CC74','#A07828','#1C1A16','#DDD4C0','#8C8070'];
+  for (let i = 0; i < 28; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'confetti-dot';
+    dot.style.cssText = [
+      'left:'        + Math.random() * 100 + '%',
+      'top:'         + (-10 + Math.random() * 10) + 'px',
+      'background:'  + colors[Math.floor(Math.random() * colors.length)],
+      'width:'       + (6 + Math.random() * 8)  + 'px',
+      'height:'      + (6 + Math.random() * 8)  + 'px',
+      'border-radius:' + (Math.random() > 0.5 ? '50%' : '2px'),
+      'animation-duration:'  + (0.8 + Math.random() * 1.2) + 's',
+      'animation-delay:'     + (Math.random() * 0.5) + 's',
+    ].join(';');
+    wrap.appendChild(dot);
+  }
+}
+
+
+// ── DATE/TIME VALIDATION ──────────────────────────────────────
+// Only rejects if the DATE itself is in the past (yesterday or earlier)
+// Time is never used to block — client may book any time slot on today or future dates
+function isDateTimePast(date) {
+  if (!date) return false;
+  const now           = new Date();
+  const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const apptDate      = new Date(date);
+  const apptMidnight  = new Date(apptDate.getFullYear(), apptDate.getMonth(), apptDate.getDate());
+  // Only past if the date is strictly before today
+  return apptMidnight < todayMidnight;
+}
+
+function validateBookingDateTime(date, time, isBnb) {
+  if (!date) {
+    toast(isBnb ? 'Please select a check-in date' : 'Please select a viewing date', 'error');
+    return false;
+  }
+  if (isDateTimePast(date)) {
+    toast('The selected date has already passed. Please choose today or a future date.', 'error');
+    const dateEl = document.getElementById('viewDate');
+    if (dateEl) {
+      dateEl.style.borderColor = '#8C2A2A';
+      setTimeout(() => { dateEl.style.borderColor = ''; }, 3000);
+    }
+    return false;
+  }
+  return true;
+}
+
+
+// ── RESET ALL FILTERS ────────────────────────────────────────
+function resetFilters() {
+  document.getElementById('searchQ').value = '';
+  document.getElementById('locSel').value  = '';
+  if(document.getElementById('minP')) document.getElementById('minP').value = '';
+  if(document.getElementById('maxP')) document.getElementById('maxP').value = '';
+  if(document.getElementById('sortSel')) document.getElementById('sortSel').value = 'new';
+  // Reset bed/guest filter chips
+  document.querySelectorAll('.chip').forEach((c,i) => c.classList.toggle('on', i===0));
+  bedFilter = '';
+  // Reset amenity chips for bnb
+  if(typeof activeAmenities !== 'undefined') activeAmenities = [];
+  document.querySelectorAll('.amenity-chip').forEach(c => c.classList.remove('on'));
+  applyFilters();
+}
+
+</script>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="lightboxBgClick(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <img class="lightbox-img" id="lightboxImg" onclick="toggleZoom(this)" src="" alt=""/>
+  <div class="lightbox-nav">
+    <button class="lightbox-btn" onclick="lightboxNav(-1)">&#8249;</button>
+    <span class="lightbox-counter" id="lightboxCounter">1 / 1</span>
+    <button class="lightbox-btn" onclick="lightboxNav(1)">&#8250;</button>
+  </div>
+  <p class="lightbox-hint">Click image to zoom &nbsp;·&nbsp; Arrow keys to navigate &nbsp;·&nbsp; ESC to close</p>
+</div>
+
+<!-- BOOKING CONFIRMATION POPUP -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <div class="confirm-top-bar"></div>
+    <div class="confetti-wrap" id="confettiWrap"></div>
+    <div class="confirm-header">
+      <div class="confirm-tick-wrap">
+        <div class="confirm-tick-ring">
+          <span class="confirm-tick-icon">✓</span>
+        </div>
+      </div>
+      <h2>Booking Received!</h2>
+      <p>Thank you! We have received your booking and our agent will get back to you as soon as possible.</p>
+    </div>
+    <div class="confirm-body">
+      <div class="confirm-ref">
+        <div>
+          <div class="confirm-ref-label">Booking Reference</div>
+          <div class="confirm-ref-num" id="cfRef">NA-000000</div>
+        </div>
+        <span style="font-size:20px">🎉</span>
+      </div>
+      <div class="confirm-details">
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-icon">🏠</span>
+          <span class="confirm-detail-label">Property</span>
+          <span class="confirm-detail-value" id="cfProp">—</span>
+        </div>
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-icon">📍</span>
+          <span class="confirm-detail-label">Location</span>
+          <span class="confirm-detail-value" id="cfLoc">—</span>
+        </div>
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-icon">📅</span>
+          <span class="confirm-detail-label">Date</span>
+          <span class="confirm-detail-value" id="cfDate">—</span>
+        </div>
+        <div class="confirm-detail-row" id="cfTimeRow">
+          <span class="confirm-detail-icon">🕐</span>
+          <span class="confirm-detail-label">Time</span>
+          <span class="confirm-detail-value" id="cfTime">—</span>
+        </div>
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-icon">👤</span>
+          <span class="confirm-detail-label">Name</span>
+          <span class="confirm-detail-value" id="cfName">—</span>
+        </div>
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-icon">📞</span>
+          <span class="confirm-detail-label">Phone</span>
+          <span class="confirm-detail-value" id="cfPhone">—</span>
+        </div>
+      </div>
+      <div class="confirm-fee-note" id="cfFeeNote">
+        <span class="confirm-fee-icon">💰</span>
+        <div class="confirm-fee-text">
+          <p><strong>Viewing Fee: KSh 1,500</strong> — payable in cash at the property on the day of viewing. No online payment required.</p>
+        </div>
+      </div>
+      <div class="confirm-cta">
+        <button class="btn-confirm-ok" onclick="closeConfirm()"><span>Got it, Thank you! 👍</span></button>
+      </div>
+      <div class="confirm-support">
+        Questions? Call us on <a href="tel:0746220862">0746220862</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
